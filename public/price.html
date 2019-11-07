@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Pricing</h1>
+  <div class="results">
+
+  </div>
+
+<script>
+  let results = document.querySelector('.results');
+fetch('/db').then(response =>{
+  return response.json()
+ 
+}).then( data =>{
+  const raw = data.filter(item =>{
+
+    results.innerHTML += `<h1>${item.name}</h1>`;
+  })
+
+  
+}
+
+)
+</script>
+</body>
+</html>
